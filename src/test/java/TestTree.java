@@ -1,37 +1,9 @@
-# data-structure-algorithm
-Java数据结构与算法
+import bannertree.TreeBuilder;
+import org.junit.Test;
+import treenode.TreeNode;
 
+public class TestTree {
 
-- 树节点定义
-```java
-/**
- * @author yichuan
- */
-@Getter
-@Setter
-@ToString
-/**
- * 树节点定义
- */
-public class TreeNode<T> implements Serializable {
-    private T value;
-    /**
-     * leftChild
-     */
-    private TreeNode<T> leftChild;
-    /**
-     * rightChild
-     */
-    private TreeNode<T> rightChild;
-
-    public TreeNode(T value) {
-        this.value = value;
-
-    }
-}
-```
-- 测试类
-```java
     @Test
     public void testTree() {
 
@@ -76,5 +48,6 @@ public class TreeNode<T> implements Serializable {
         //
         System.out.println("求最大深度:" + treeBuilder.maxDepth(A));
 
- }
-```
+
+    }
+}
