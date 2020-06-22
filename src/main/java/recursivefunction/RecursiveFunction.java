@@ -24,4 +24,16 @@ public class RecursiveFunction {
         }
         return result;
     }
+
+    /**
+     * @param number
+     * @return
+     */
+    public int fact(int number) {
+        if (number == 0 || number == 1) {
+            return 1;
+        } else {
+            return number * fact(number - 1);
+        }
+    }
 }
