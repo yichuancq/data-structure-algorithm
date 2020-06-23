@@ -59,6 +59,6 @@ public class NodeListTest {
         len = nodeList.lenLinkList(node);
         System.out.println(node.toString());
         System.out.println("len:" + len);
-
+       // System.out.println("len:" + len);
     }
 }
