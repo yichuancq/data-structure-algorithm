@@ -51,7 +51,6 @@ public class NodeList<T extends ListNode> {
             //插入头部
             headNode = currentNode;
             size++;
-            System.out.println("" + headNode.toString());
             return headNode;
         }
         //insert head
@@ -79,8 +78,24 @@ public class NodeList<T extends ListNode> {
             //3 后继结点指向添加到新结点
             preNode.setNextNode(newNode);
         }
-        System.out.println("" + headNode.toString());
         return headNode;
+    }
+
+    /**
+     * @param headNode
+     * @param number
+     * @return
+     */
+    public ListNode findElement(ListNode headNode, int number) {
+        ListNode currentNode = headNode;
+        while (currentNode != null) {
+            if (currentNode.getData().equals(number)) {
+                System.out.println("data:" + currentNode.getData());
+                return currentNode;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+        return currentNode;
     }
 
     /**
@@ -89,15 +104,36 @@ public class NodeList<T extends ListNode> {
      * @param headNode
      * @param position
      */
-    public ListNode deleteElementInLinkList(ListNode<T> headNode, int position) {
+    public ListNode deleteElementInLinkList(ListNode<T> headNode, final int position) {
         // 删除头结点
         // 删除尾部
         // 删除中间任意一个位置
-        ListNode<T> listNode = null;
-        if (position == 0) {
-
+        int size = this.lenLinkList(headNode);
+        if (position < 0 || position > size) {
+            throw new IllegalArgumentException("index is error");
         }
-        return listNode;
+        //表头结点
+        if (position == 0) {
+            //
+            ListNode currentNode = headNode.getNextNode();
+            headNode = null;
+            return currentNode;
+        } else {
+            //删除中间结点
+            int count = 1;
+            ListNode preNode = headNode;
+            // 移动位置
+            while (count < position) {
+                preNode = preNode.getNextNode();
+                count++;
+            }
+            //当前结点指向前驱结点到下一个结点
+            ListNode currentNode = preNode.getNextNode();
+            //前驱结点指向当前结点
+            preNode.setNextNode(currentNode.getNextNode());
+            currentNode = null;
+        }
+        return headNode;
     }
 
 }

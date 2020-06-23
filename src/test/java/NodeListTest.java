@@ -19,33 +19,46 @@ public class NodeListTest {
         ListNode node;
         node = nodeList.insertElementToLinkList(null, node1, 0);
         int len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
         System.out.println("len:" + len);
         ////
         node = nodeList.insertElementToLinkList(node, node2, 1);
-
         len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
         System.out.println("len:" + len);
 
         node = nodeList.insertElementToLinkList(node, node3, 2);
         len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
         System.out.println("len:" + len);
-        // nodeList.printListNodes(node);
 
         node = nodeList.insertElementToLinkList(node, node4, 2);
         len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
         System.out.println("len:" + len);
-        //nodeList.printListNodes(node);
 
         node = nodeList.insertElementToLinkList(node, node5, 2);
         len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
         System.out.println("len:" + len);
-        //nodeList.printListNodes(node);
-
 
         node = nodeList.insertElementToLinkList(node, node6, 4);
         len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
         System.out.println("len:" + len);
-        //nodeList.printListNodes(node);
+
+
+        System.out.println("删除元素");
+        node = nodeList.deleteElementInLinkList(node, 0);
+        len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
+        System.out.println("len:" + len);
+
+        System.out.println("删除元素");
+        node = nodeList.deleteElementInLinkList(node, 1);
+        len = nodeList.lenLinkList(node);
+        System.out.println(node.toString());
+        System.out.println("len:" + len);
 
     }
 }
