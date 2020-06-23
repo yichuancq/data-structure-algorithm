@@ -17,11 +17,11 @@ public class NodeListTest {
         ListNode node6 = new ListNode(6);
         //
         ListNode node;
-        ListNode headNode = nodeList.insertElementToLinkList(null, node1, 0);
-        int len = nodeList.lenLinkList(headNode);
+        node = nodeList.insertElementToLinkList(null, node1, 0);
+        int len = nodeList.lenLinkList(node);
         System.out.println("len:" + len);
         ////
-        node = nodeList.insertElementToLinkList(headNode, node2, 1);
+        node = nodeList.insertElementToLinkList(node, node2, 1);
 
         len = nodeList.lenLinkList(node);
         System.out.println("len:" + len);
@@ -29,6 +29,23 @@ public class NodeListTest {
         node = nodeList.insertElementToLinkList(node, node3, 2);
         len = nodeList.lenLinkList(node);
         System.out.println("len:" + len);
-        nodeList.printListNodes();
+        // nodeList.printListNodes(node);
+
+        node = nodeList.insertElementToLinkList(node, node4, 2);
+        len = nodeList.lenLinkList(node);
+        System.out.println("len:" + len);
+        //nodeList.printListNodes(node);
+
+        node = nodeList.insertElementToLinkList(node, node5, 2);
+        len = nodeList.lenLinkList(node);
+        System.out.println("len:" + len);
+        //nodeList.printListNodes(node);
+
+
+        node = nodeList.insertElementToLinkList(node, node6, 4);
+        len = nodeList.lenLinkList(node);
+        System.out.println("len:" + len);
+        //nodeList.printListNodes(node);
+
     }
 }

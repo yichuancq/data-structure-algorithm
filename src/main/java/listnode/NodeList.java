@@ -6,18 +6,6 @@ package listnode;
  */
 public class NodeList<T extends ListNode> {
     /**
-     * 头结点
-     */
-    private ListNode<T> headNode;
-
-    /**
-     * 初始化单链表
-     */
-    public NodeList() {
-        this.headNode = null;
-    }
-
-    /**
      * 求长度
      *
      * @return
@@ -35,13 +23,12 @@ public class NodeList<T extends ListNode> {
     /**
      * 打印结点信息
      */
-    public void printListNodes() {
+    public void printListNodes(ListNode headNode) {
         ListNode<T> currentNode = headNode;
         while (currentNode != null) {
             System.out.println("data:" + currentNode.getData());
             currentNode = currentNode.getNextNode();
         }
-
     }
 
     /**
@@ -76,14 +63,10 @@ public class NodeList<T extends ListNode> {
             //这句比较重要
             currentNode.setNextNode(null);
             size++;
-            System.out.println("" + headNode.toString());
-            return headNode;
 
         } else {
             //中间插入元素
             //1 移动结点到指定位置
-            //2 修改新结点到指向
-            //3 后继结点指向添加到新结点
             int count = 1;
             ListNode preNode = headNode;
             while (count <= position - 1) {
@@ -91,11 +74,13 @@ public class NodeList<T extends ListNode> {
                 count++;
             }
             currentNode = preNode.getNextNode();
+            //2 修改新结点到指向
             newNode.setNextNode(currentNode);
+            //3 后继结点指向添加到新结点
             preNode.setNextNode(newNode);
-            System.out.println("" + headNode.toString());
-            return headNode;
         }
+        System.out.println("" + headNode.toString());
+        return headNode;
     }
 
     /**
@@ -109,14 +94,10 @@ public class NodeList<T extends ListNode> {
         // 删除尾部
         // 删除中间任意一个位置
         ListNode<T> listNode = null;
+        if (position == 0) {
 
+        }
         return listNode;
     }
 
-    /**
-     * 删除整个链表
-     */
-    public void clearLinkList() {
-
-    }
 }
